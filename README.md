@@ -21,7 +21,7 @@ Then Clone My Git Repo And Unzip File And Paste Inside Folder Name(If Dont Have 
 
 ### Video Preview
 
-[![IMAGE ALT TEXT HERE](https://github.com/0xl30/Hyprland-Rice/assets/72350874/e04b6dd4-e157-491c-9bb4-aad097d8ad49)](https://www.youtube.com/watch?v=UXFID-vbNMw&t=11s)
+[![IMAGE ALT TEXT HERE](https://github.com/0xl30/Hyprland-Rice/assets/72350874/2daf07a4-4393-403a-927a-8c40f453b1c2)](https://www.youtube.com/watch?v=UXFID-vbNMw)
 
 > [!NOTE]
 > It's Not Mine Project Or Rice,I Just Edited Some Files Make Better For Me.
