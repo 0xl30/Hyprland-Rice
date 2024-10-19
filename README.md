@@ -43,3 +43,21 @@ Before setting up Hyprland-Rice, make sure to install the following dependencies
 - **JaKooLit Hyprland**: Install the base Hyprland setup from JaKooLit [here](https://github.com/JaKooLit/Arch-Hyprland).
 - **Firefox Dots Theme**: Install the Sweet-Pop Firefox theme from PROxZIMA [here](https://github.com/PROxZIMA/Sweet-Pop).
 - **Open Bangla Keyboard**: Install Open Bangla Keyboard with Ibus from [here](https://github.com/OpenBangla/OpenBangla-Keyboard).
+
+ ## 🔥 **Video Preview**
+
+Check out the video demo of the Hyprland Rice in action! Click the thumbnail below to watch on YouTube:
+
+[![Hyprland Rice Demo](https://img.youtube.com/vi/ru2ULE5eRYo/0.jpg)](https://www.youtube.com/watch?v=ru2ULE5eRYo)
+## 📞 **Contact Me**
+
+Feel free to reach out to me on social media by clicking the animated buttons below:
+
+<p align="center">
+  <a href="https://www.facebook.com/0xL30" target="_blank">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" style="border-radius: 5px;">
+  </a>
+  <a href="https://www.linkedin.com/in/0xl30/" target="_blank">
+    <img src="https://img.shields.io/badge/LinkedIn-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" style="border-radius: 5px;">
+  </a>
+</p>
