@@ -36,3 +36,14 @@
 @define-color flamingo  #f2cdcd;
 @define-color rosewater #f5e0dc;
 
+@keyframes rainbow-gradient {
+    0% {
+        border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+    50% {
+        border-image: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red) 1 1 1 1;
+    }
+    100% {
+        border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+    }
+}

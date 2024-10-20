@@ -1,5 +1,6 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Catppuccin Mocha */
+/* Catppuccin Mocha - Rainbow Bordered */
+/* Designed by https://github.com/0xl30 */
 
 * {
 	font-family: "JetBrainsMono Nerd Font";
@@ -10,13 +11,13 @@
 	font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
-@import "../waybar/style/catppuccin-themes/mocha.css";
+@import "../waybar/style/catppuccin-themes/rgbmocha.css";
 
 window#waybar {
   	transition-property: background-color;
   	transition-duration: 0.5s;
   	background: transparent;
-  	border-radius: 10px;
+  	border-radius: 2px;
 }
 
 window#waybar.hidden {
@@ -76,23 +77,18 @@ window#waybar.empty #window {
 
 /* This section can be use if you want to separate waybar modules */
 .modules-left, .modules-center, .modules-right {
-	background: @theme_base_color; 
- 	border: 0.5px solid @overlay0;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-	border-radius: 10px;
+  background: @theme_base_color;
+  border: 2px solid transparent;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  padding-right: 4px;
+  padding-left: 4px;
+  border-radius: 0px;
 
-} 
+  border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+  animation: rainbow-gradient 20s ease-in-out infinite;  /* Adjust timing as needed */
+}
 
-.modules-left, .modules-right {
-  	border: 1px solid @blue;
-	padding-top: 2px;
-	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
-} 
 
 #backlight,
 #backlight-slider,
@@ -221,8 +217,16 @@ window#waybar.empty #window {
 }
 
 #custom-cava_mviz {
-	color: @pink;
+    animation: rainbow-text 0.80s linear infinite;
 }
+
+@keyframes rainbow-text {
+    0% { color: rgb(0, 247, 198); }       /* Low amplitude */
+    42% { color: rgb(60, 0, 179); }    /* Mid amplitude */
+    71% { color: indigo; }   /* Higher amplitude */
+    100% { color: rgb(234, 0, 255); }    /* Maximum amplitude */
+}
+
 
 #custom-menu {
   color: @rosewater;
