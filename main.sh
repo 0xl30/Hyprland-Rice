@@ -11,9 +11,9 @@ MAGENTA='\033[35m'
 RESET='\033[0m'
 
 print_banner() {
-    echo -e "${RED}╦ ╦┬ ┬┌─┐┬─┐┬  ┌─┐┌┐┌┌┬┐${RESET}${ORANGE}  ╔╦╗┌─┐┌┬┐┌─┐${RESET}"
-    echo -e "${YELLOW}╠═╣└┬┘├─┘├┬┘│  ├─┤│││ ││───${RESET}${GREEN}║║│ │ │ └─┐${RESET}"
-    echo -e "${BLUE}╩ ╩ ┴ ┴  ┴└─┴─┘┴ ┴┘└┘─┴┘${RESET}${MAGENTA}  ═╩╝└─┘ ┴ └─┘${RESET}"
+    echo -e "${RED}╦ ╦┬ ┬┌─┐┬─┐┬  ┌─┐┌┐┌┌┬┐   ╦═╗┬┌─┐┌─┐${RESET}"
+    echo -e "${YELLOW}╠═╣└┬┘├─┘├┬┘│  ├─┤│││ ││───╠╦╝││  ├┤ ${RESET}"
+    echo -e "${BLUE}╩ ╩ ┴ ┴  ┴└─┴─┘┴ ┴┘└┘─┴┘   ╩╚═┴└─┘└─┘${RESET}"
     echo "----------------------------------------------"
     echo -e "              Hyprland-Dots By ${RED}0${YELLOW}x${BLUE}R${ORANGE}y${GREEN}a${MAGENTA}n${RESET}"
     echo "----------------------------------------------"
@@ -26,7 +26,7 @@ CONFIG_DIR="$HOME/.config"
 HOME_DIR="$HOME"
 THEMES_DIR="$HOME/.themes"
 ICONS_DIR="$HOME/.icons"
-FOLDERS=("hypr" "kitty" "rofi" "neofetch" "swaync" "waybar" "yt-dlp")
+FOLDERS=("hypr" "kitty" "rofi" "neofetch" "swaync" "waybar" "yt-dlp" "yad")
 THEMES_ICON=("bluesh" "icon_bluesh")
 ZSHRC=".zshrc"
 

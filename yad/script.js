@@ -1,4 +1,7 @@
-// JavaScript to add fade-in animations when scrolling
+// <!--####Hyprland-Rice By Ryan Aka 0xl30####-->
+// <!--https://github.com/0xl30/Hyprland-Rice.git-->
+// <!--Don't Edit version.txt In this folder-->
+// <!--You Can Edit Edit Others Files :#-->
 document.addEventListener("DOMContentLoaded", function() {
     const fadeInElements = document.querySelectorAll(".fade-in");
 
@@ -19,12 +22,12 @@ document.addEventListener("DOMContentLoaded", function() {
         observer.observe(element);
     });
 });
-const localVersion = "1.1.0";
+const localVersion = "1.0.1";
 
 // Function to check for new versions
 async function checkForNewVersion() {
     try {
-        const response = await fetch('https://raw.githubusercontent.com/0xl30/Hyprland-Rice/main/yad/version.txt');
+        const response = await fetch('https://raw.githubusercontent.com/0xl30/Hyprland-Rice/master/yad/version.txt');
         const remoteVersion = await response.text();
         if (remoteVersion.trim() !== localVersion.trim()) {
             showUpdateNotification();
@@ -78,7 +81,6 @@ async function fetchVersionDetails() {
 }
 
 
-// Check for updates when the page loads
 window.onload = () => {
     checkForNewVersion();
 };

@@ -1,3 +1,10 @@
+/*
+<!--####Hyprland-Rice By Ryan Aka 0xl30####-->
+<!--https://github.com/0xl30/Hyprland-Rice.git-->
+<!--Don't Edit version.txt In this folder-->
+<!--You Can Edit Edit Others Files :#--> 
+*/
+
 /* Global Styles */
 * {
     margin: 0;
@@ -11,6 +18,17 @@ body {
     color: #c9d1d9;
     line-height: 1.6;
     overflow-x: hidden;
+}
+
+.profile-pic {
+    border-radius: 50%;
+    width: 200px;  /* Reduced profile picture size */
+    margin-bottom: 0px;
+    transition: transform 0.5s ease; /* Smooth scale on hover */
+}
+
+.profile-pic:hover {
+    transform: scale(1.05); /* Slight hover effect */
 }
 
 .container {
@@ -32,17 +50,6 @@ body {
     margin-bottom: 40px;
 }
 
-.profile-pic {
-    border-radius: 50%;
-    width: 200px;  /* Reduced profile picture size */
-    margin-bottom: 0px;
-    transition: transform 0.5s ease; /* Smooth scale on hover */
-}
-
-.profile-pic:hover {
-    transform: scale(1.05); /* Slight hover effect */
-}
-
 h1 {
     color: #58a6ff;
     font-size: 2.5rem; /* Reduced font size */
@@ -62,16 +69,6 @@ h1 {
     color: transparent;
     background-size: 400%; /* Make background larger to allow scrolling effect */
     animation: rainbow 5s infinite linear; /* Slowed down for smoother animation */
-}
-
-/* Keyframes for the rainbow animation */
-@keyframes rainbow {
-    0% {
-        background-position: 0% 50%; /* Start position */
-    }
-    100% {
-        background-position: 100% 50%; /* End position */
-    }
 }
 
 /* Green Highlight for Security Researcher */
@@ -164,27 +161,6 @@ h2 {
 .footer a:hover {
     text-decoration: underline;
     color: #1f6feb;
-}
-
-/* Animation for Fade-in Effect */
-@keyframes rainbow {
-    0% {
-        background-position: 0%;
-    }
-    100% {
-        background-position: 200%;
-    }
-}
-
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-    100% {
-        opacity: 1;
-        transform: translateY(0);
-    }
 }
 
 .show {
@@ -321,16 +297,24 @@ h2 {
     justify-content: center;
     align-items: center;
     z-index: 10000;
+    opacity: 0;
+    animation: fadeIn 0.8s forwards ease-out; /* Extended fade-in animation */
 }
 
+/* Popup content with bounce-in effect */
 .version-popup-content {
-    background-color: #fff;
-    padding: 20px;
-    max-width: 800px;
-    border-radius: 10px;
-    position: relative;
+    background-color: #282c34;
+    color: #ffffff;
+    padding: 30px;
+    max-width: 80%; /* Shrinks width of popup for more left/right space */
+    border-radius: 12px;
+    transform: scale(0.7); /* Shrunk at first */
+    animation: bounceIn 0.6s forwards ease-out; /* Bounce-in effect */
+    margin-left: 20px;
+    margin-right: 20px;
 }
 
+/* Close button hover animation */
 #close-popup {
     position: absolute;
     top: 10px;
@@ -341,8 +325,110 @@ h2 {
     padding: 5px 10px;
     cursor: pointer;
     border-radius: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Transition for hover */
 }
 
 #close-popup:hover {
     background-color: #ff9900;
+    transform: scale(1.1); /* Slightly enlarges on hover */
+}
+
+/* Keyframes for the rainbow animation */
+@keyframes rainbow {
+    0% {
+        background-position: 0% 50%; /* Start position */
+    }
+    100% {
+        background-position: 100% 50%; /* End position */
+    }
+}
+/* Animation for Fade-in Effect */
+@keyframes rainbow {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 200%;
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* Fade-in animation for the entire popup */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* Bounce-in effect for popup content */
+@keyframes bounceIn {
+    0% {
+        transform: scale(0.7);
+        opacity: 0;
+    }
+    50% {
+        transform: scale(1.05); /* Over-scaling for a bounce effect */
+        opacity: 1;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Slide-in animation for list items */
+@keyframes slideIn {
+    from {
+        transform: translateX(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+/* Highlight effect for hover */
+ul li:hover {
+    background-color: #333; /* Dark background on hover */
+    color: #ffffff; /* White text on hover */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out; /* Smooth transition */
+    padding: 5px; /* Optional: adds some padding for visual effect */
+    border-radius: 5px; /* Optional: adds rounding to the corners */
+}
+
+
+/* Button bounce hover effect */
+button {
+    background-color: #000;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #333;
+    transform: translateY(-5px); /* Button bounces upwards slightly on hover */
+}
+
+/* Additional hover animation for notification buttons */
+.update-notification button:hover {
+    transform: scale(1.1); /* Scale effect on hover */
 }
