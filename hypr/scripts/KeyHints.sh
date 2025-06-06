@@ -1,36 +1,40 @@
 #!/bin/bash
-# GDK BACKEND. Change to either wayland or x11 if having issues
-BACKEND=wayland
+set -euo pipefail
 
-# Check if rofi is running and kill it if it is
-if pgrep -x "rofi" > /dev/null; then
-    pkill rofi
-fi
+# Kill rofi if running
+pgrep -x "rofi" >/dev/null && pkill rofi
 
-# Detect monitor resolution and scale
-x_mon=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .width')
-y_mon=$(hyprctl -j monitors | jq '.[] | select(.focused==true) | .height')
-hypr_scale=$(hyprctl -j monitors | jq '.[] | select (.focused == true) | .scale' | sed 's/\.//')
+# Get resolution and scale
+x_mon=$(hyprctl -j monitors | jq -r '.[] | select(.focused==true) | .width')
+y_mon=$(hyprctl -j monitors | jq -r '.[] | select(.focused==true) | .height')
+scale=$(hyprctl -j monitors | jq -r '.[] | select(.focused==true) | .scale')
 
-# Calculate width and height based on percentages and monitor resolution
-width=$((x_mon * hypr_scale / 100))
-height=$((y_mon * hypr_scale / 100))
+# Calculate effective dimensions
+width=$(echo "$x_mon * $scale" | bc)
+height=$(echo "$y_mon * $scale" | bc)
 
-# Set maximum width and height
+# Percentages
+percentage_width=40
+percentage_height=95
+
+# Calculate dynamic sizes
+dynamic_width=$(echo "$width * $percentage_width / 100" | bc)
+dynamic_height=$(echo "$height * $percentage_height / 100" | bc)
+
+# Cap max dimensions
 max_width=1200
 max_height=1000
 
-# Set percentage of screen size for dynamic adjustment
-percentage_width=40
-percentage_height=90
+if [ "$dynamic_width" -gt "$max_width" ]; then
+  dynamic_width=$max_width
+fi
+if [ "$dynamic_height" -gt "$max_height" ]; then
+  dynamic_height=$max_height
+fi
 
-# Calculate dynamic width and height
-dynamic_width=$((width * percentage_width / 100))
-dynamic_height=$((height * percentage_height / 100))
+# Launch YAD
+uri_path="$HOME/.config/yad/index.html"
+[ -f "$uri_path" ] || { echo "HTML file not found at $uri_path"; exit 1; }
 
-# Limit width and height to maximum values
-dynamic_width=$(($dynamic_width > $max_width ? $max_width : $dynamic_width))
-dynamic_height=$(($dynamic_height > $max_height ? $max_height : $dynamic_height))
-
-# Launch yad with calculated width and height
-GDK_BACKEND=$BACKEND yad --html --uri=file:$HOME/.config/yad/index.html --width=$dynamic_width --height=$dynamic_height \
+yad --html --uri="file:$uri_path" \
+  --width="$dynamic_width" --height="$dynamic_height"
