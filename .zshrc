@@ -1,11 +1,10 @@
-# If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 export ZSH="$HOME/.oh-my-zsh"
 
-ZSH_THEME="fino"
+ZSH_THEME="agnosterzak"
 
-plugins=( 
+plugins=(
     git
     archlinux
     zsh-autocomplete
@@ -14,14 +13,8 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.oh-my-zsh/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh
-# Environment Variable 
-export GOPATH=$HOME/.go
-export PATH=$PATH:$GOROOT/bin:$GOPATH/bin
 
-# API Tokens 
-#export GITHUB_TOKEN=
-#export VIRUSTOTAL_TOKEN=
+#fastfetch -c $HOME/.config/fastfetch/config-compact.jsonc
 
 # Alias Commands
 alias ls='lsd'
@@ -30,8 +23,7 @@ alias la='ls -a'
 alias lla='ls -la'
 alias lt='ls --tree'
 alias lbin='cd /usr/local/bin/'
-alias Wordlist='cd /usr/share/seclists/'
+alias wordlist='cd /usr/share/seclists/'
 
-# Auto Run
-neofetch
 
+$HOME/.config/fastfetch/random-image.sh

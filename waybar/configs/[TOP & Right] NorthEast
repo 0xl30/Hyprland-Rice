@@ -8,6 +8,7 @@
   "$HOME/.config/waybar/ModulesWorkspaces",
   "$HOME/.config/waybar/ModulesCustom",
   "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
   ],
 "layer": "top",
 //"mode": "dock",
@@ -51,6 +52,8 @@
   "$HOME/.config/waybar/ModulesWorkspaces",
   "$HOME/.config/waybar/ModulesCustom",
   "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
+  "$HOME/.config/waybar/ModulesVertical",
   ],
 "layer": "top",
 "position": "right",
@@ -75,7 +78,7 @@
     
 "modules-right": [
 	"mpris",
-	"custom/swaync",
+	"group/notify",
     "tray",
     "custom/light_dark",
     ],

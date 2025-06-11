@@ -1,0 +1,208 @@
+/*#####0xRyan##### */
+
+@import url('../../.config/waybar/wallust/colors-waybar.css');
+
+@define-color noti-border-color #82aaff;
+@define-color noti-bg rgba(16, 18, 27, 0.85);
+@define-color noti-bg-alt rgba(30, 30, 46, 0.9);
+@define-color noti-bg-hover rgba(122, 162, 247, 0.1);
+@define-color text-color #cdd6f4;
+@define-color text-color-alt #a6accd;
+@define-color text-color-disabled rgba(180, 180, 180, 0.5);
+
+* {
+    font-family: 'JetBrains Mono', 'FiraCode', 'Noto Sans', sans-serif;
+    font-weight: 500;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    font-size: 14px;
+}
+
+@keyframes rainbow {
+    0% {
+        border-image-source: linear-gradient(to right, #ff3c3c, #ff7b3c, #ffb03c, #a3ee43, #3ca3ff, #7b3cff);
+    }
+    50% {
+        border-image-source: linear-gradient(to right, #7b3cff, #3ca3ff, #a3ee43, #ffb03c, #ff7b3c, #ff3c3c);
+    }
+    100% {
+        border-image-source: linear-gradient(to right, #ff3c3c, #ff7b3c, #ffb03c, #a3ee43, #3ca3ff, #7b3cff);
+    }
+}
+
+@keyframes pulse {
+    0% { opacity: 0.8; }
+    50% { opacity: 1; }
+    100% { opacity: 0.8; }
+}
+
+.notification-content {
+    background: linear-gradient(to bottom, rgba(20, 20, 30, 0.9), rgba(17, 17, 27, 0.95));
+    border-radius: 10px;
+    border: 1px solid;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, #ff3c3c, #ff7b3c, #ffb03c, #a3ee43, #3ca3ff, #7b3cff);
+    animation: rainbow 3s infinite;
+    margin: 0px;
+    padding: 6px 12px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+    color: @text-color;
+    transition: all 0.3s ease;
+}
+
+.notification-row:hover .notification-content {
+    transform: scale(1.02);
+    box-shadow: 0 0 18px rgba(122, 162, 247, 0.4);
+}
+
+.close-button {
+    background: linear-gradient(to right, #5C6BC0, #3F51B5);
+    color: #ffffff;
+    border-radius: 10px;
+    padding: 4px 10px;
+    margin: 15px 15px 0 0;
+    font-weight: bold;
+    transition: all 0.2s ease;
+}
+
+.close-button:hover {
+    background: linear-gradient(to right, #f7768e, #e6052a);
+    transform: scale(1.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.notification-action,
+.notification-default-action {
+    border: 2px solid @noti-border-color;
+    background: rgba(30, 30, 45, 0.75);
+    border-radius: 8px;
+    margin: 4px;
+    padding: 6px 10px;
+    transition: all 0.3s ease;
+}
+
+.notification-action:hover,
+.notification-default-action:hover {
+    background: @noti-bg-hover;
+    transform: translateY(-1px);
+    color: @text-color-alt;
+}
+
+.inline-reply-entry {
+    background: @noti-bg;
+    color: @text-color;
+    caret-color: @text-color;
+    border: 1px solid @noti-border-color;
+    border-radius: 8px;
+    padding: 5px;
+}
+
+.inline-reply-button {
+    font-size: 0.75rem;
+    margin-left: 6px;
+    background: @noti-bg;
+    border: 1px solid @noti-border-color;
+    border-radius: 8px;
+    color: @text-color;
+    padding: 4px 8px;
+}
+
+.inline-reply-button:hover {
+    background: @noti-bg-hover;
+    transform: scale(1.05);
+}
+
+/* MPRIS Player */
+.widget-mpris {
+    background: linear-gradient(to right, rgba(20, 20, 30, 0.95), rgba(30, 30, 46, 0.95));
+    color: @text-color;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 12px;
+    border: 1px solid @noti-border-color;
+    box-shadow: 0 0 12px rgba(0, 0, 0, 0.4);
+}
+
+.widget-mpris-title {
+    font-weight: bold;
+    font-size: 1rem;
+    margin-bottom: 2px;
+}
+
+.widget-mpris-subtitle {
+    font-size: 0.9rem;
+    color: @text-color-alt;
+}
+
+.widget-mpris > box > button {
+    background: linear-gradient(to right, #7aa2f7, #5C6BC0);
+    font-family: 'Material Symbols Rounded', 'Font Awesome 6 Free', sans-serif;
+    font-size: 1.2rem;
+    color: white;
+    padding: 6px 10px;
+    margin: 4px;
+    border: none;
+    border-radius: 8px;
+    transition: all 0.2s ease;
+}
+
+.widget-mpris > box > button:hover {
+    background: linear-gradient(to right, #f7768e, #e64c4c);
+    transform: scale(1.1);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Other elements (volume, brightness, labels, buttons, etc.) */
+.widget-volume,
+.widget-backlight,
+.widget-buttons-grid {
+    background: linear-gradient(to right, rgba(20, 20, 30, 0.85), rgba(30, 30, 46, 0.9));
+    border: 1px solid @noti-border-color;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 10px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    color: @text-color;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+    background: rgba(20, 20, 30, 0.85);
+    border: 1px solid @noti-border-color;
+    border-radius: 8px;
+    margin: 6px;
+    padding: 6px 12px;
+    font-size: 1rem;
+    transition: all 0.2s ease;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+    background: @noti-bg-hover;
+    color: @text-color-alt;
+    transform: scale(1.05);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+}
+
+.widget-title {
+    background: rgba(24, 24, 32, 0.9);
+    color: @noti-border-color;
+    padding: 6px 12px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 10px;
+    border: 1px solid @noti-border-color;
+    margin: 8px;
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+}
+
+.widget-title > button {
+    background: transparent;
+    border: 1px solid @noti-border-color;
+    border-radius: 10px;
+    color: @text-color;
+    padding: 4px 8px;
+    font-size: 0.9rem;
+}
+
+.widget-title > button:hover {
+    background: rgba(122, 162, 247, 0.15);
+    transform: scale(1.05);
+}

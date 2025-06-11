@@ -3,7 +3,7 @@
 /* --- 👍 designed by https://github.com/Krautt  👍 --- */
 
 * {
-	font-family: "JetBrains Mono Nerd Font";
+	font-family: "JetBrainsMono Nerd Font";
 	font-weight: bold;
 	min-height: 0;		
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
@@ -18,13 +18,6 @@ window#waybar {
 
 window#waybar.hidden {
 	opacity: 0.5;
-}
-
-window#waybar.empty,
-window#waybar.empty #window {
-	padding: 0px;
-	border: 0px;
-	background-color: transparent;
 }
 
 tooltip {
@@ -43,8 +36,8 @@ tooltip {
 	background-color: #3d174b;
 	padding-top: 2px;
 	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
+	padding-right: 5px;
+	padding-left: 5px;
 }
 
 .modules-center {
@@ -61,10 +54,11 @@ tooltip {
 	background-color: #441a53;
 	padding-top: 2px;
 	padding-bottom: 2px;
-	padding-right: 4px;
-	padding-left: 4px;
+	padding-right: 5px;
+	padding-left: 5px;
 }
 
+#taskbar button,
 #workspaces button {
 	color: #6E6A86;
     box-shadow: none;
@@ -79,7 +73,7 @@ tooltip {
 
 #workspaces button.active {
 	color: #cba6f7;
-	border-radius: 50%;
+	border-radius: 20%;
 	background-color: black;
     padding-left: 8px;
     padding-right: 8px;
@@ -131,6 +125,7 @@ tooltip {
 #custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
 #custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
@@ -139,8 +134,11 @@ tooltip {
 #custom-hint,
 #custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
 #custom-settings,
 #custom-spotify,
 #custom-swaync,
@@ -198,12 +196,13 @@ tooltip {
 #battery.critical:not(.charging) {
 	color: #f53c3c;
 	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -213,6 +212,7 @@ tooltip {
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;
 	min-height: 5px;
@@ -220,30 +220,9 @@ tooltip {
 	background-color: #6E6A86;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px;
-	border-radius: 5px;
-	background-color: purple;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
-	background-color: #6E6A86;
-}
-
-#backlight-slider highlight {
-	min-width: 10px;
 	border-radius: 5px;
 	background-color: purple;
 }

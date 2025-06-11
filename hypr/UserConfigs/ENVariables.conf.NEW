@@ -1,0 +1,15 @@
+env = GDK_BACKEND,wayland,x11,*
+env = QT_QPA_PLATFORM,wayland;xcb
+env = CLUTTER_BACKEND,wayland
+env = XDG_CURRENT_DESKTOP,Hyprland
+env = XDG_SESSION_DESKTOP,Hyprland
+env = XDG_SESSION_TYPE,wayland
+env = QT_AUTO_SCREEN_SCALE_FACTOR,1
+env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+env = QT_QPA_PLATFORMTHEME,qt5ct
+env = QT_QPA_PLATFORMTHEME,qt6ct
+env = QT_QUICK_CONTROLS_STYLE,org.hyprland.style
+env = GDK_SCALE,1
+env = QT_SCALE_FACTOR,1
+env = MOZ_ENABLE_WAYLAND,1
+env = ELECTRON_OZONE_PLATFORM_HINT,auto # auto selects Wayland if possible, X11 otherwise

@@ -26,7 +26,7 @@ CONFIG_DIR="$HOME/.config"
 HOME_DIR="$HOME"
 THEMES_DIR="$HOME/.themes"
 ICONS_DIR="$HOME/.icons"
-FOLDERS=("hypr" "kitty" "rofi" "neofetch" "swaync" "waybar" "yt-dlp" "yad")
+FOLDERS=("hypr" "kitty" "rofi" "fastfetch" "swaync" "waybar" "yt-dlp" "yad")
 THEMES_ICON=("bluesh" "icon_bluesh")
 ZSHRC=".zshrc"
 

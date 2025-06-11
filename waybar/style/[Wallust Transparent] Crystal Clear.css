@@ -7,11 +7,11 @@
 @define-color critical #ff0000; /* critical color */
 @define-color warning #f3f809;  /* warning color */
 @define-color text @color12;  /* text color */
-@define-color text-alt @color9;  /* text alternative color */
+@define-color text-alt @color13;  /* text alternative color */
 @define-color bg @color7;  /* background color */
 
 *{
-	font-family: "JetBrains Mono Nerd Font";
+	font-family: "JetBrainsMono Nerd Font";
 	font-weight: bold;
 	min-height: 0;	
 	/* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
@@ -51,6 +51,16 @@ window#waybar.empty #window {
 	   
 }
 
+tooltip {
+	color: @color12;
+	background: @color10;
+	opacity: 0.8;
+	border-radius: 10px;
+	border-width: 1px;
+	border-style: solid;
+}
+
+#taskbar button,
 #workspaces button {
 	color: @text-alt;
    	box-shadow: none;
@@ -115,6 +125,7 @@ window#waybar.empty #window {
 #custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
 #custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
@@ -123,8 +134,11 @@ window#waybar.empty #window {
 #custom-hint,
 #custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
 #custom-settings,
 #custom-spotify,
 #custom-swaync,
@@ -166,12 +180,13 @@ window#waybar.empty #window {
 #battery.critical:not(.charging) {
 	color: @critical;
 	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -181,6 +196,7 @@ window#waybar.empty #window {
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;  
 	min-height: 10px; 
@@ -188,30 +204,9 @@ window#waybar.empty #window {
 	background-color: black;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px; 
-	border-radius: 5px;
-	background-color: wheat;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;  
-	min-height: 10px;
-	border-radius: 5px;
-	background-color: black;
-}
-
-#backlight-slider highlight {
-	min-width: 10px; 
 	border-radius: 5px;
 	background-color: wheat;
 }

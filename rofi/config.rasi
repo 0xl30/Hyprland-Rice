@@ -1,248 +1,32 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Main Config (main) */
+/* Ja KooLit - Default 
 
-/* ---- Configuration ---- */
-configuration {
-    modi:                       "drun,run,filebrowser";
-    font:                       "Fira Code SemiBold 12";
-    show-icons:                 true;
-    display-drun:               "";
-	display-run:                "";
-    display-filebrowser:        "";
-    display-window:             "";
-	drun-display-format:        "{name}";
-    hover-select:               true;
-    me-select-entry:            "MouseSecondary";
-    me-accept-entry:            "MousePrimary";
-    window-format:              "{w} · {c} · {t}";
-	dpi:						1;
-    
-}
+* All main themes or configs are located in ~/.config/rofi/themes/
+* If you want to edit the config, that is where you should edit NOT here 
 
-/* ---- Load pywal colors (custom wal template) ---- */
-@theme "~/.config/rofi/wallust/colors-rofi.rasi"
+* To load a new theme, manually edit the file path below or choose desired theme via rofi theme selector (choose via app menu)
 
-/* ---- Window ---- */
-window {
-    width:						400px;
-	height:						1027px;
-    x-offset:                   8px;
-    y-offset:                   0px;
-    spacing:                    0px;
-    padding:                    0px;
-    margin:                     0px; 
-    border:                     2px;
-    border-color:               #7aa2f7;
-    cursor:                     "default";
-    location:                   west;
-    anchor:                     center;
-    fullscreen:                 false;
-    enabled:                    true;
-    border-radius:              12px;
- 	background-color:           rgba(0, 0, 0, 0.6);
-}
+* Alternative way to Load (preferred) own cooked by Ja 
+* SUPER CTRL R - Choose style & SUPER CTRL SHIFT R 
 
-/* ---- Mainbox ---- */
-mainbox {
-    enabled:                    true;
-    orientation:                vertical;
-	padding:					0px;
-    background-color:		    rgba(0, 0, 0, 0.1);
-    /*background-image:           url("~/.config/rofi/.current_wallpaper", height);*/
-    children:                   [ "inputbar", "imagebox" ];
-    border-radius:              12px;
-}
+* TIPS 
+* If you have edited a config, rename it with a unique name. During update, the contents of 
+* ~/.config/rofi/themes/ will be replaced. */
 
-/* ---- Imagebox ---- */
-imagebox {
-    background-color:           transparent;
-    orientation:                vertical;
-    children:                   [ "mode-switcher",  "listbox"];
-}
+/* ---- Global Configuration Fonts ---- */
+@import "~/.config/rofi/0-shared-fonts.rasi"
 
-/* ---- Listbox ---- */
-listbox {
-    spacing:                    5px;
-    orientation:                vertical;
-    children:                   ["listview" ];
-	padding:					6px;
-    border-radius:              12px;
-    border:                     -2px;
-    border-color:               #7aa2f7;
-	background-color:		    rgba(0, 0, 0, 0.6);
-}
+/* note: Main themes in ~/.config/rofi/themes */
+/* You can manually change here or you can use rofi theme selector SUPER SHIFT E */
 
-/* ---- Dummy ---- */
-dummy {
-    background-color:           transparent;
-}
 
-/* ---- Inputbar ---- */
-inputbar {
-    enabled:                    true;
-    text-color:                 @foreground;
-    spacing:                    10px;
-    padding:                    40px 40px 155px;
-    border-radius:              12px;
-    border-color:               #7aa2f7;
-	background-color:		    rgba(0, 0, 0, 0.6);
-    background-image:           url("~/.config/rofi/.current_wallpaper", height);
-    children:                   [ "textbox-prompt-colon","entry" ];
-    border:                     -2px;
-    border-color:               #7aa2f7;
-}
-
-textbox-prompt-colon {
-    enabled:                    true;
-	padding:					6px 0px 6px 10px;
-    expand:                     false;
-    str:                           "🐧";
-    text-color:                 inherit;
-	background-color:			transparent;
-}
-
-entry {
-    enabled:                    true;
-	padding:					6px 0px 0px 0px;
-    text-color:                 inherit;
-    cursor:                     text;
-    placeholder:                "Search Anything";
-    placeholder-color:          inherit;
-	background-color:			transparent;
-}
-
-/* ---- Mode Switcher ---- */
-mode-switcher{
-	orientation:				horizontal;
-    enabled:                    true;
-    padding:                    8px;
-    spacing:                    12px;
-    background-color:          	transparent;
-    text-color:                 @foreground;
-}
-
-button {
-    padding:                   10px;
-    border-radius:             10px;
-    background-color:          @background;
-    text-color:                inherit;
-    cursor:                    pointer;
-    border:                    1px;
-    border-color:              #7aa2f7;
-}
-
-button selected {
-    background-color:          rgb(92, 107, 192, 0.8);
-    text-color:                @foreground;
-    border:                    1px;
-    border-color:              @background;
-	
-}
-
-/* ---- Listview ---- */
-listview {
-	enabled:					true;
-	columns:					1;
-	lines:						10;
-	spacing:                    0px;
-	dynamic:                    true;
-	cycle:                      true;
-	scrollbar:                  false;
-	layout:                     vertical;
-	reverse:                    false;
-	fixed-height:               true;
-	fixed-columns:              true;
-	background-color:           transparent;
-	cursor:                      "default";
-}
-
-/* ---- Element ---- */
-element {
-    enabled:                    true;
-    padding:                    8px;
-    spacing:                    10px;
-    cursor:                     pointer;
-    background-color:         	transparent;
-    border-radius:              10px;
-    border:                     0px;
-}
-
-element normal.normal {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element normal.urgent {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element normal.active {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element selected.normal {
-    background-color:           rgb(92, 107, 192, 0.7);
-    text-color:                 @foreground;
-}
-
-element selected.urgent {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element selected.active {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element alternate.normal {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element alternate.urgent {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element alternate.active {
-    background-color:           inherit;
-    text-color:                 @foreground;
-}
-
-element-icon {
-    background-color:           transparent;
-    text-color:                 inherit;
-    size:                       30px;
-    cursor:                     inherit;
-}
-
-element-text {
-    background-color:           transparent;
-    text-color:                 inherit;
-    cursor:                     inherit;
-    vertical-align:             0.5;
-    horizontal-align:           0;
-}
-
-/*****----- Message -----*****/
-message {
-    background-color:           @background;
-    margin:						20px 0px 0px 0px;
-    border-radius: 				12px;
-}
-
-textbox {
-    padding:                    10px;
-    background-color:      		@background;
-    text-color:                 @foreground;
-}
-
-error-message {
-    padding:                    15px;
-    border-radius:            	12px;
-    background-color:      		@background;
-    text-color:                 @foreground;
-}
+//@theme "~/.config/rofi/themes/KooL_style-2-Dark.rasi"
+//@theme "~/.config/rofi/themes/Bluesh v2.0 By 0xRyan.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-2-Dark.rasi"
+//@theme "~/.config/rofi/themes/Bluesh v2.0 By 0xRyan copy.rasi"
+//@theme "~/.config/rofi/themes/Bluesh v2.0 By 0xRyan.rasi"
+//@theme "~/.config/rofi/themes/Bluesh v2.0 By 0xRyan copy.rasi"
+//@theme "~/.config/rofi/themes/Bluesh v2.0 By 0xRyan copy.rasi"
+//@theme "~/.config/rofi/themes/KooL_LonerOrZ.rasi"
+//@theme "~/.config/rofi/themes/KooL_style-10-Fancy-v2.rasi"
+@theme "~/.config/rofi/themes/Bluesh v2.0 By 0xRyan copy.rasi"

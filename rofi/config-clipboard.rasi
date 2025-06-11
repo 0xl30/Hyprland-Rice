@@ -1,16 +1,76 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Clipboard Config - Clipboard */
+/* Bluesh Clipboard Config - By 0xRyan */
 
-@import "~/.config/rofi/master-config.rasi"  
+
+
+@import "~/.config/rofi/config.rasi"  
+
+/* ---- Window ---- */
+window {
+  width:                   400px;
+  height:                  700px;
+  x-offset:                -40px;       /* Move right (adjust as needed) */
+  y-offset:                5px;        /* Move down (adjust as needed) */
+  location:                northeast; 
+  border:                  2px;
+  border-radius:           12px;
+  border-color:          #7aa2f7;
+  background-color:      rgba(0, 0, 0, 0.6);
+}
+
+
+/* ---- Mainbox ---- */
+mainbox {
+  children: [ "inputbar", "message", "listview"];
+}
+
+/* ---- Inputbar ---- */
+inputbar {
+    enabled:                    true;
+    text-color:                 @foreground;
+    spacing:                    10px;
+    padding:                    10px 10px 105px;
+    border-radius:              12px;
+    border-color:             #7aa2f7;
+    background-image:           url("~/Pictures/Profile/cover3.jpg", width);
+    children:                   [ "textbox-prompt-colon","entry" ];
+    border:                     -2px;
+    border-color:               #7aa2f7;
+}
 
 /* ---- Entry ---- */
 entry {
-  width: 37%;
-  placeholder: "📋 Search Clipboard **note** 👀 CTRL Del - Cliphist del or Alt Del - cliphist wipe";
+  width: inherit;
+  padding:                    0px 30px;
+  placeholder:    "☠️ Search Keywords & Text";
 }
 
 /* ---- Listview ---- */
 listview {
-  columns: 1;
-  lines: 8;
+  columns:      1;
+  lines:        8;
+  fixed-height: true;
+  spacing:      4px;
+  cycle:        true;
+}
+/*****----- Message -----*****/
+message {
+    background-color:           @background;
+    padding:                    0px 30px;
+    margin:                     2px 5px 2px 5px;
+}
+
+/* ---- Elements ---- */
+element {
+  orientation:    horizontal;
+}
+
+element-icon {
+  size:     0%;
+}
+
+element-text {
+  horizontal-align:   0.0;
+  vertical-align:     0.5;
+  margin:             0px;
+  padding:            0px;
 }

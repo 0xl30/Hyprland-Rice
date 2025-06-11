@@ -19,13 +19,13 @@
 		"custom/tty",
 		"custom/browser",
 		"custom/settings",
-		"power-profiles-daemon",
 	]
 },
 "group/motherboard": {
 	"orientation": "horizontal",
 	"modules": [
 		"cpu",
+		"power-profiles-daemon",
 		"memory",
 		"temperature",
 		"disk",
@@ -41,7 +41,8 @@
         },
 	"modules": [
 		"temperature",		
-		"cpu",	
+		"cpu",
+		"power-profiles-daemon",	
 		"memory",
 		"disk",
 	]
@@ -92,5 +93,47 @@
 		"keyboard-state",
 		"custom/keyboard",
 	]
+},
+"group/notify": {
+	"orientation": "inherit",
+	"drawer": {
+		"transition-duration": 500,
+		"children-class": "custom/swaync",
+		"transition-left-to-right": false
+        },
+	"modules": [
+		"custom/swaync",
+		"custom/dot_update",
+	]
+},
+
+"group/power": {
+    "orientation": "inherit",
+    "drawer": {
+        "transition-duration": 500,
+        "children-class": "drawer-child",
+        "transition-left-to-right": false
+      },
+    "modules": [
+        "custom/power",
+        "custom/quit",
+        "custom/lock",
+        "custom/reboot"
+      ]
+},
+// groups for vertical
+"group/power#vert": {
+     "orientation": "inherit",
+     "drawer": {
+        "transition-duration": 300,
+        "children-class": "not-memory",
+        "transition-left-to-right": false
+       },
+     "modules": [
+        "custom/power",
+        "custom/lock",
+        "custom/logout",
+        "custom/reboot"
+      ]
 },
 }

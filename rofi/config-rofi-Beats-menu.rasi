@@ -1,22 +1,69 @@
-/* ---- 💫 https://github.com/JaKooLit 💫 ---- */
-/* Main config Rofi Beats Config (compact) */
+/* By 0xRyan */
 
-@import "~/.config/rofi/master-config.rasi"  
+@import "~/.config/rofi/config.rasi"  
 
-/* ---- Entry ---- */ 
-entry {
-  width: 20%;
-  placeholder: "📻 Choose Music Source";
-}
+
+
 
 /* ---- Window ---- */
 window {
-  width: 24%;
+  width:                   300px;
+  height:                  120px;
+  x-offset:                -50px;       /* Move right (adjust as needed) */
+  y-offset:                5px;        /* Move down (adjust as needed) */
+  location:                northeast; 
+  border:                  2px;
+  border-radius:           12px;
+  border-color:          #7aa2f7;
+  background-color:      rgba(0, 0, 0, 0.6);
+  background-image:           url("~/Pictures/Profile/cover4.jpg", width);
+
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "listview"];
+}
+
+/* ---- Inputbar ---- */
+inputbar {
+    enabled:                    true;
+    text-color:                 @foreground;
+    spacing:                    10px;
+    padding:                    5px 0px 5px;
+    border-radius:              12px;
+    border-color:             #7aa2f7;
+    background-image: none;
+ /* background-image:           url("~/Pictures/Profile/cover3.jpg", width); */
+    children:                   [ "textbox-prompt-colon","entry" ];
+    border:                     -2px;
+    border-color:               #7aa2f7;
+}
+
+/* ---- Entry ---- */ 
+entry {
+  expand: false;
+  placeholder: " 📻 Choose Music Source";
+  horizontal-align: 0.5;
+  horizontal-align: 0.5;
 }
 
 /* ---- Listview ---- */
 listview {
   fixed-columns: false;
+  scrollbar: false;
   colums: 1;
-  lines: 3;
+  lines: 2;
+  spacing: 4px;
+  cycle: true;
+}
+
+/* ---- Element ---- */
+element-icon {
+  	size: 0%;
+}
+element-text {
+    horizontal-align: 0.5;
+    
 }

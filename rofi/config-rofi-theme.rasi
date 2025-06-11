@@ -1,0 +1,71 @@
+/* Bluesh By 0xRyan */
+
+@import "~/.config/rofi/config.rasi"  
+
+window {
+    width:						600px;
+	  height:						827px;
+    x-offset:                   8px;
+    y-offset:                   0px;
+    spacing:                    0px;
+    padding:                    0px;
+    margin:                     0px; 
+    border:                     2px;
+    border-color:             #7aa2f7;
+    cursor:                    "default";
+    location:                   center;
+    anchor:                     center;
+    fullscreen:                 false;
+    enabled:                    true;
+    border-radius:              12px;
+ 	  background-color:           rgba(0, 0, 0, 0.7);
+}
+/* ---- Inputbar ---- */
+inputbar {
+    enabled:                    true;
+    text-color:                 @foreground;
+    spacing:                    10px;
+    padding:                    40px 40px 155px;
+    border-radius:              12px;
+    border-color:             #7aa2f7;
+	  background-color:		    rgba(0, 0, 0, 0.6);
+    background-image:           url("~/Pictures/Profile/cover2.jpg", height);
+    children:                   [ "textbox-prompt-colon","entry" ];
+    border:                     -2px;
+    border-color:               #7aa2f7;
+}
+
+/* ---- Mainbox ---- */
+mainbox {
+  children:
+    [ "inputbar", "listview"];
+}
+
+/* ---- Entry input ---- */
+entry {
+  expand: true;
+  placeholder: " ⬇️  Select Which Rofi Theme wanted to apply";
+}
+
+/* ---- Listview ---- */
+listview {
+  columns: 2;
+  lines: 20;
+  fixed-height: false;
+  margin: 10px;
+  scrollbar: true;
+  spacing: 6px;
+  cycle: true;
+}
+
+/* ---- Elements ---- */
+element-icon {
+  size: 0%;
+}
+element-text {
+  horizontal-align: 0.0;
+  vertical-align: 0.5;
+  margin: 1px;
+  padding: 5px;
+}
+

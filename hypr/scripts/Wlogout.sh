@@ -4,14 +4,14 @@
 
 # Set variables for parameters. First numbers corresponts to Monitor Resolution
 # i.e 2160 means 2160p
-A_2160=700
-B_2160=700
-A_1600=480
-B_1600=480
-A_1440=450
-B_1440=450
-A_1080=350
-B_1080=350
+A_2160=600
+B_2160=600
+A_1600=400
+B_1600=400
+A_1440=400
+B_1440=400
+A_1080=200
+B_1080=200
 A_720=50
 B_720=50
 

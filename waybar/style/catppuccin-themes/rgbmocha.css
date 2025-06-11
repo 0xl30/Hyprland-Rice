@@ -38,12 +38,13 @@
 
 @keyframes rainbow-gradient {
     0% {
-        border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+        border-image-source: linear-gradient(90deg, #a04c66, #b89348, #6e9e6e, #528c90, #4f97b0, #6073b4, #8b6bbf);
     }
     50% {
-        border-image: linear-gradient(270deg, violet, indigo, blue, green, yellow, orange, red) 1 1 1 1;
+        border-image-source: linear-gradient(270deg, #8b6bbf, #6073b4, #4f97b0, #528c90, #6e9e6e, #b89348, #a04c66);
     }
     100% {
-        border-image: linear-gradient(90deg, red, orange, yellow, green, blue, indigo, violet) 1;
+        border-image-source: linear-gradient(90deg, #a04c66, #b89348, #6e9e6e, #528c90, #4f97b0, #6073b4, #8b6bbf);
     }
 }
+

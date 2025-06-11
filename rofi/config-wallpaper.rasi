@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 /* Main Config (wallpaper) */
 
-@import "~/.config/rofi/master-config.rasi"  
+@import "~/.config/rofi/config.rasi"  
 
 /* ---- Configuration ---- */ 
 configuration {
@@ -10,25 +10,65 @@ configuration {
 
 window {
   width: 60%;
+  height: inherit; 
+  border:                     2px;
+  border-color:             #7aa2f7;
+  cursor:                    "default";
+  location:                   center;
+  border-radius:              12px;
+ 	background-color:           rgba(0, 0, 0, 0.6);
 }
 
-/* ---- Imagebox ---- */
-imagebox {
-  orientation: vertical;
+/* ---- Mainbox ---- */
+mainbox {
   children:
-    [ "entry", "listbox"];
+    [ "inputbar", "listview"];
 }
-
-
+/* ---- Inputbar ---- */
+inputbar {
+    enabled:                    true;
+    text-color:                 @foreground;
+    spacing:                    0px;
+    padding:                    90px 10px 105px;
+    border-radius:              12px;
+    border-color:             #7aa2f7;
+    background-image:           url("~/Pictures/Profile/cover7.jpg", width);
+    children:                   [ "textbox-prompt-colon","entry" ];
+    border:                     -2px;
+    border-color:               #7aa2f7;
+}
 entry {
-  expand: false;
-  placeholder: "🎞️ Choose Wallpaper";
+  expand: true;
+  placeholder: " 🎞️ Search / Choose Wallpaper";
+  horizontal-align: 0.5;
+  horizontal-align: 0.5;
 }
 
 /* ---- Listview ---- */
 listview {
   columns: 4;
-  lines: 3;
+  lines: 2;
+  spacing: 20px;
+  padding: 10px;
+  flow: horizontal;
+  fixed-width: true;
+  fixed-height: true;
+  cycle: true;
+}
+
+/* ---- Scrollbar ---- */
+scrollbar {
+    border:						1px;
+    border-radius:				0px;
+    background-color:				inherit;
+    handle-color: 				#719DF9;
+    handle-width: 				2px ;
+    padding:      				0;
+}
+
+element-text selected {
+    background-color:           #719DF9;
+    text-color:                   black;
 }
 
 /* ---- Element ---- */
@@ -36,15 +76,25 @@ element {
   orientation: vertical;
   padding: 0px;
   spacing: 0px;
-  border-radius: 15px;
+  border-radius: 4px;
+  padding: 0px;
+  margin: 0px;
+}
+
+element selected.normal {
+  background-color:rgba(113, 217, 249, 0.49);
 }
 
 element-icon {
-  size: 20%;
+    text-color:                  inherit;
+    size:                        10%;
+    margin:                      -40px;
+    cursor:                      inherit;
 }
 
 element-text {
-  font: "Fira Code SemiBold 12";
   vertical-align: 0.5;
   horizontal-align: 0.5;
+  padding: 2px;
+  margin: 2px;
 }

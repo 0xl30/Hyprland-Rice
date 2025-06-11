@@ -122,6 +122,7 @@ color: #F3F4F5;
 }
 
 #custom-light_dark,
+#custom-dot_update,
 #custom-swaync,
 #custom-hypridle,
 #idle_inhibitor,
@@ -147,6 +148,7 @@ color: #F3F4F5;
 	padding: 2px 15px;
 }
 
+#custom-playerctl,
 #power-profiles-daemon,
 #custom-cycle_wall,
 #cpu {
@@ -287,12 +289,13 @@ color: #F3F4F5;
 #battery.critical:not(.charging) {
 	color: #f53c3c;
 	animation-name: blink;
-	animation-duration: 0.5s;
-	animation-timing-function: linear;
+	animation-duration: 3.0s;
+	animation-timing-function: steps(12);
 	animation-iteration-count: infinite;
 	animation-direction: alternate;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -302,6 +305,7 @@ color: #F3F4F5;
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;
 	min-height: 5px;
@@ -309,30 +313,9 @@ color: #F3F4F5;
 	background-color: #6E6A86;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px;
-	border-radius: 5px;
-	background-color: purple;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
-	background-color: #6E6A86;
-}
-
-#backlight-slider highlight {
-	min-width: 10px;
 	border-radius: 5px;
 	background-color: purple;
 }

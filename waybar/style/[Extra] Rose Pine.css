@@ -37,6 +37,7 @@ tooltip {
     border-width: 0px;
 }
 
+#taskbar button,
 #workspaces button {
     box-shadow: none;
 	text-shadow: none;
@@ -128,6 +129,7 @@ tooltip {
 #custom-browser,
 #custom-cava_mviz,
 #custom-cycle_wall,
+#custom-dot_update,
 #custom-file_manager,
 #custom-keybinds,
 #custom-keyboard,
@@ -136,8 +138,11 @@ tooltip {
 #custom-hint,
 #custom-hypridle,
 #custom-menu,
+#custom-playerctl,
 #custom-power_vertical,
 #custom-power,
+#custom-quit,
+#custom-reboot,
 #custom-settings,
 #custom-spotify,
 #custom-swaync,
@@ -177,6 +182,23 @@ tooltip {
 	color: #39FF14;
 }
 
+@keyframes blink {
+  to {
+    color: @main-bg;
+  }
+}
+
+#battery.critical:not(.charging) {
+  background-color: red;
+  color: white;
+  animation-name: blink;
+  animation-duration: 3.0s;
+  animation-timing-function: steps(12);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  box-shadow: inset 0 -3px transparent;
+}
+
 #backlight {
 	padding-right: 2px;
 }
@@ -193,6 +215,7 @@ tooltip {
     background-color: @main-bg;
 }
 
+#backlight-slider slider,
 #pulseaudio-slider slider {
 	min-width: 0px;
 	min-height: 0px;
@@ -202,33 +225,15 @@ tooltip {
 	box-shadow: none;
 }
 
+#backlight-slider trough,
 #pulseaudio-slider trough {
 	min-width: 80px;
 	min-height: 5px;
 	border-radius: 5px;
 }
 
+#backlight-slider highlight,
 #pulseaudio-slider highlight {
 	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider slider {
-	min-width: 0px;
-	min-height: 0px;
-	opacity: 0;
-	background-image: none;
-	border: none;
-	box-shadow: none;
-}
-
-#backlight-slider trough {
-	min-width: 80px;
-	min-height: 10px;
-	border-radius: 5px;
-}
-
-#backlight-slider highlight {
-	min-width: 10px;
 	border-radius: 5px;
 }

@@ -8,6 +8,7 @@
   "$HOME/.config/waybar/ModulesWorkspaces",
   "$HOME/.config/waybar/ModulesCustom",
   "$HOME/.config/waybar/ModulesGroups",
+  "$HOME/.config/waybar/UserModules",
   ],
 "layer": "top",
 "position": "bottom",
@@ -30,13 +31,12 @@
 	"custom/separator#blank",
 	"clock",
 	"custom/separator#blank",
-	"custom/swaync"
+	"group/notify"
 ],
 		
 "modules-right": [
 	"hyprland/window",
-	"custom/separator#blank",
-	"custom/separator#blank", 
+	"custom/separator#blank_2",
 	"pulseaudio",
 	"custom/separator#blank",
 	"custom/power",					
